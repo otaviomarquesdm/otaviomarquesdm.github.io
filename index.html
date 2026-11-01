@@ -3,239 +3,302 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — Creative Designer</title>
+  <title>Otavio Marques — Product Manager</title>
+  <meta name="description" content="Product Manager with a product design background, building scalable digital platforms." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #faf9f7;
-      --surface: #f2f0eb;
-      --text: #1a1916;
-      --muted: #7a7872;
-      --border: #e0ddd8;
-      --font-display: 'Cormorant Garamond', serif;
-      --font-body: 'DM Sans', sans-serif;
+      --bg: #d9d9d9;
+      --accent: #0015ff;
+      --text: #0015ff;
+      --text-secondary: #6874fe;
+      --on-accent: #ffffff;
+      --divider: #ffffff;
+      --link-hover: #ff0000;
+      --font: 'Space Grotesk', sans-serif;
+      --page-gutter: 30px;
     }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.7; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.4; letter-spacing: -0.01em; }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; }
 
-    /* Nav */
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-    .nav-logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; color: var(--text); text-decoration: none; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400; transition: color .2s; }
-    .nav-links a:hover { color: var(--text); }
+    /* Header */
+    .site-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; min-height: 235px; padding: 30px var(--page-gutter); }
+    .site-name { font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
+    .site-role { color: var(--text-secondary); }
+    .site-nav { display: flex; gap: 20px; list-style: none; font-size: 16px; font-weight: 700; line-height: 1.3; }
+    .site-nav a { text-decoration: none; }
+    .site-nav a:hover, .site-nav a[aria-current] { text-decoration: underline; }
+
+    /* Layout */
+    .layout { display: grid; grid-template-columns: 358px minmax(0, 1fr); column-gap: 52px; padding-left: var(--page-gutter); }
+
+    /* Intro */
+    .intro { border-top: 1px solid var(--divider); padding-top: 30px; align-self: start; }
+    .intro-bio { max-width: 310px; padding-left: 6px; margin-bottom: 60px; }
+
+    /* Contact links */
+    .contact-list { list-style: none; }
+    .contact-item { background: var(--accent); color: var(--on-accent); }
+    .contact-item + .contact-item { border-top: 0.5px solid var(--divider); }
+    .contact-row { display: flex; align-items: center; gap: 1px; padding: 12px 6px; font-size: 13px; line-height: 1.3; letter-spacing: -0.005em; text-decoration: none; }
+    .contact-row.is-primary { font-weight: 700; }
+    .contact-arrow { color: var(--accent); font-size: 10px; }
+    a.contact-row:hover { background: var(--on-accent); color: var(--link-hover); }
+    a.contact-row:hover .contact-arrow { color: inherit; }
 
     /* Sections */
-    .section { padding: 5rem 2.5rem; max-width: 900px; margin: 0 auto; }
-    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; font-weight: 500; }
-    .divider { width: 100%; height: 1px; background: var(--border); max-width: 900px; margin: 0 auto; }
+    .section { border-top: 1px solid var(--divider); display: flex; flex-direction: column; gap: 37px; padding: 30px var(--page-gutter) 80px 0; }
+    .section-title { font-size: 13px; font-weight: 700; line-height: 1.3; letter-spacing: -0.005em; }
 
-    /* Hero */
-    #hero { padding: 7rem 2.5rem 5rem; max-width: 900px; margin: 0 auto; }
-    .hero-name { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
-    .hero-name em { font-style: italic; color: var(--muted); }
-    .hero-tagline { font-size: 1.05rem; color: var(--muted); max-width: 480px; font-weight: 300; margin-bottom: 2.5rem; line-height: 1.8; }
-    .btn-primary { background: var(--text); color: var(--bg); padding: 11px 24px; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; border: none; cursor: pointer; border-radius: 2px; text-decoration: none; font-weight: 500; }
-    .btn-secondary { color: var(--muted); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
-    .hero-cta { display: inline-flex; gap: 1.25rem; align-items: center; }
+    /* Experience */
+    .jobs { display: flex; flex-direction: column; gap: 50px; }
+    .job { border-top: 0.5px solid var(--divider); display: flex; gap: 30px; padding-top: 20px; }
+    .job-meta, .job-body { flex: 1 1 0; min-width: 0; }
+    .job-title { font-size: 16px; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 16px; }
+    .job-details { color: var(--text-secondary); display: flex; flex-direction: column; gap: 2px; }
+    .job-body p + p { margin-top: 1.4em; }
 
-    /* About */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .about-bio { font-size: 1.05rem; line-height: 1.9; font-weight: 300; }
-    .about-bio p + p { margin-top: 1.2rem; }
-    .about-detail-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; font-weight: 500; }
-    .about-detail-value { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    /* Skills */
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 30px; }
+    .skill-group h4 { font-size: 16px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+    .skill-group ul { color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; padding-left: 22px; }
+    .skill-group li { line-height: 1.2; }
 
-    /* Projects */
-    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; cursor: pointer; transition: border-color .2s; }
-    .project-card:hover { border-color: var(--text); }
-    .project-thumb { width: 100%; aspect-ratio: 16/9; background: var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .project-info { padding: 1.25rem; }
-    .project-tag { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
-    .project-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 300; margin-bottom: 0.4rem; }
-    .project-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* Resume */
-    .resume-row { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
-    .resume-row:first-child { border-top: 1px solid var(--border); }
-    .resume-year { font-size: 12px; color: var(--muted); padding-top: 3px; letter-spacing: 0.04em; }
-    .resume-role { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.2rem; }
-    .resume-place { font-size: 13px; color: var(--muted); margin-bottom: 0.5rem; }
-    .resume-desc { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 300; }
-    .resume-download { display: inline-flex; align-items: center; gap: 8px; margin-top: 2rem; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); padding: 10px 20px; border-radius: 2px; cursor: pointer; background: transparent; font-family: var(--font-body); transition: color .2s, border-color .2s; }
-    .resume-download:hover { color: var(--text); border-color: var(--text); }
+    /* Education */
+    .education { display: grid; grid-template-columns: 1fr 1fr; gap: 37px; }
+    .education h3, .education p { font-size: 16px; font-weight: 400; }
 
     /* Contact */
-    .contact-heading { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1rem; font-style: italic; }
-    .contact-sub { color: var(--muted); font-weight: 300; margin-bottom: 3rem; max-width: 400px; }
-    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-link { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: 4px; text-decoration: none; color: var(--text); transition: border-color .2s, background .2s; }
-    .contact-link:hover { border-color: var(--text); background: var(--surface); }
-    .contact-link-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
-    .contact-link-value { font-size: 0.95rem; }
-    .contact-arrow { color: var(--muted); font-size: 1.2rem; }
+    .contact-cta { display: flex; align-items: flex-end; height: 300px; padding-bottom: 32px; }
+    .contact-cta a { font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; text-decoration: none; }
+    .contact-cta a:hover { text-decoration: underline; }
 
-    /* Footer */
-    footer { text-align: center; padding: 2.5rem; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); letter-spacing: 0.06em; }
+    /* Tablet */
+    @media (max-width: 1279px) {
+      .site-header { min-height: 180px; }
+      .layout { display: block; padding: 0 var(--page-gutter); }
+      .intro-bio { max-width: 520px; }
+      .intro { margin-bottom: 30px; }
+      .section { padding-right: 0; }
+      .job { flex-direction: column; }
+    }
 
-    /* Responsive */
-    @media (max-width: 640px) {
-      nav { padding: 0 1.25rem; }
-      .nav-links { gap: 1.25rem; }
-      #hero, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .about-grid, .projects-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .resume-row { grid-template-columns: 1fr; gap: 0.25rem; }
+    /* Mobile */
+    @media (max-width: 799px) {
+      :root { --page-gutter: 20px; }
+      .site-header { min-height: 140px; }
+      .job { gap: 20px; }
+    }
+    @media (max-width: 479px) {
+      .site-header { flex-direction: column; gap: 12px; }
+      .skills, .education { grid-template-columns: 1fr; }
+      .education { gap: 4px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="nav-logo">Your Name</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section id="hero">
-    <h1 class="hero-name">Creative <em>Designer</em><br>&amp; Storyteller</h1>
-    <p class="hero-tagline">I craft thoughtful visual experiences that sit at the intersection of brand, identity, and human connection.</p>
-    <div class="hero-cta">
-      <a href="#work" class="btn-primary">View Work</a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="about" class="section">
-    <p class="section-label">About Me</p>
-    <div class="about-grid">
-      <div class="about-bio">
-        <p>I'm a designer based in [City], working across brand identity, digital design, and art direction. I believe great design starts with a deep curiosity about people.</p>
-        <p>Currently open to freelance projects and full-time opportunities. I love collaborating with studios, startups, and anyone with a problem worth solving beautifully.</p>
-      </div>
-      <div>
-        <p class="about-detail-label">Location</p>
-        <p class="about-detail-value">Atlanta, GA</p>
-        <p class="about-detail-label">Availability</p>
-        <p class="about-detail-value">Open to work</p>
-        <p class="about-detail-label">Disciplines</p>
-        <p class="about-detail-value">Brand Identity · UI/UX · Art Direction</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="work" class="section">
-    <p class="section-label">Selected Work</p>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-thumb">Project image</div>
-        <div class="project-info">
-          <p class="project-tag">Brand Identity · 2024</p>
-          <p class="project-title">Project Title One</p>
-          <p class="project-desc">A short description of the project, the client, and the outcome.</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-thumb">Project image</div>
-        <div class="project-info">
-          <p class="project-tag">UI Design · 2024</p>
-          <p class="project-title">Project Title Two</p>
-          <p class="project-desc">A short description of the project, the client, and the outcome.</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-thumb">Project image</div>
-        <div class="project-info">
-          <p class="project-tag">Art Direction · 2023</p>
-          <p class="project-title">Project Title Three</p>
-          <p class="project-desc">A short description of the project, the client, and the outcome.</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-thumb">Project image</div>
-        <div class="project-info">
-          <p class="project-tag">Digital · 2023</p>
-          <p class="project-title">Project Title Four</p>
-          <p class="project-desc">A short description of the project, the client, and the outcome.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="resume" class="section">
-    <p class="section-label">Experience</p>
+  <header class="site-header" id="top">
     <div>
-      <div class="resume-row">
-        <div class="resume-year">2022 – Present</div>
-        <div>
-          <p class="resume-role">Senior Designer</p>
-          <p class="resume-place">Studio / Company Name</p>
-          <p class="resume-desc">Brief summary of your role, responsibilities, and key achievements in this position.</p>
-        </div>
-      </div>
-      <div class="resume-row">
-        <div class="resume-year">2020 – 2022</div>
-        <div>
-          <p class="resume-role">Designer</p>
-          <p class="resume-place">Studio / Company Name</p>
-          <p class="resume-desc">Brief summary of your role, responsibilities, and key achievements in this position.</p>
-        </div>
-      </div>
-      <div class="resume-row">
-        <div class="resume-year">2018 – 2020</div>
-        <div>
-          <p class="resume-role">Junior Designer</p>
-          <p class="resume-place">Studio / Company Name</p>
-          <p class="resume-desc">Brief summary of your role, responsibilities, and key achievements in this position.</p>
-        </div>
-      </div>
+      <h1 class="site-name">Otavio Marques,</h1>
+      <p class="site-role">Product Manager | Product Design Background | Building Scalable Digital Platforms</p>
     </div>
-    <button class="resume-download">↓ Download full resume (PDF)</button>
-  </section>
+    <nav aria-label="Main">
+      <ul class="site-nav">
+        <li><a href="#experience" aria-current="page">Work</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="divider"></div>
+  <div class="layout">
 
-  <section id="contact" class="section">
-    <p class="section-label">Contact</p>
-    <p class="contact-heading">Let's make<br>something great.</p>
-    <p class="contact-sub">Whether it's a new project, a collaboration, or just a hello — I'd love to hear from you.</p>
-    <div class="contact-links">
-      <a href="mailto:you@email.com" class="contact-link">
-        <div>
-          <p class="contact-link-label">Email</p>
-          <p class="contact-link-value">you@youremail.com</p>
-        </div>
-        <span class="contact-arrow">→</span>
-      </a>
-      <a href="https://linkedin.com/in/yourname" class="contact-link">
-        <div>
-          <p class="contact-link-label">LinkedIn</p>
-          <p class="contact-link-value">linkedin.com/in/yourname</p>
-        </div>
-        <span class="contact-arrow">→</span>
-      </a>
-      <a href="https://instagram.com/yourhandle" class="contact-link">
-        <div>
-          <p class="contact-link-label">Instagram</p>
-          <p class="contact-link-value">@yourhandle</p>
-        </div>
-        <span class="contact-arrow">→</span>
-      </a>
-    </div>
-  </section>
+    <aside class="intro" id="about">
+      <p class="intro-bio">A seasoned Senior Producer with 5+ years of experience, I excel in leading complex product design projects from concept to completion.</p>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <a class="contact-row is-primary" href="mailto:otaviomarquesdm@gmail.com">otaviomarquesdm@gmail.com <span class="contact-arrow" aria-hidden="true">↗</span></a>
+        </li>
+        <li class="contact-item">
+          <a class="contact-row" href="tel:+16789060306">(678) 906-0306 <span class="contact-arrow" aria-hidden="true">↗</span></a>
+        </li>
+        <li class="contact-item">
+          <a class="contact-row" href="https://www.linkedin.com/in/otaviodemendonca/" target="_blank" rel="noopener">Linkedin <span class="contact-arrow" aria-hidden="true">↗</span></a>
+        </li>
+      </ul>
+    </aside>
 
-  <footer>© 2026 Your Name · Designed with intention</footer>
+    <main>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <h2 class="section-title" id="experience-title">Experience</h2>
+        <div class="jobs">
+
+          <article class="job">
+            <div class="job-meta">
+              <h3 class="job-title">Product Manager (Digital Platform)</h3>
+              <div class="job-details">
+                <p>Sola Insurance</p>
+                <p>Jul 2025 – Present</p>
+                <p>Atlanta, GA</p>
+              </div>
+            </div>
+            <div class="job-body">
+              <p><strong>Manage the product development and platform strategy</strong> for Sola’s internal and customer-facing insurance systems. Coordinating priorities while supporting the platform infrastructure and operational maturity <strong>leading up to Sola’s $8M Series A.</strong></p>
+              <p>Implemented the product roadmap, sprint planning, and delivery timelines while introducing product operations practices, including structured briefings, cross-team syncs, retrospectives, and centralized documentation. Resulting in a <strong>clear scope definition and end-to-end ownership initiatives that helped scale revenue from $30K to $500K+ per month.</strong></p>
+              <p><strong>Implemented product metrics and platform monitoring to track system health, user activity, and operational performance</strong>, guiding data-informed improvements to core flows including quote generation, checkout, and payment processing. <strong>Established QA and release processes to improve deployment reliability and significantly reduce production bugs.</strong></p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <h3 class="job-title">Product Designer</h3>
+              <div class="job-details">
+                <p>Sola Insurance</p>
+                <p>Sep 2024 – Jul 2025</p>
+                <p>Atlanta, GA</p>
+              </div>
+            </div>
+            <div class="job-body">
+              <p>Joined as the 4th employee at a seed-stage startup, helping define the foundation of the company’s digital product and design language.</p>
+              <p><strong>Designed and helped shape the UX and UI architecture for the company’s internal and customer platforms.</strong></p>
+              <p>Led design of the internal sales platform, enabling centralized visibility into sales activity, policy management, agent rewards, and customer support workflows.</p>
+              <p><strong>Designed the policyholder portal from scratch, allowing customers to manage payments, access policy documentation, update information, and file claims.</strong></p>
+              <p>Worked closely with engineering to translate product concepts into functional features and scalable interfaces.</p>
+              <p>Contributed to establishing early product communication and documentation practices across the team.</p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <h3 class="job-title">Visual Designer</h3>
+              <div class="job-details">
+                <p>Hyundai L&amp;C USA</p>
+                <p>Jan 2024 – Sep 2024</p>
+                <p>Atlanta, GA</p>
+              </div>
+            </div>
+            <div class="job-body">
+              <p><strong>Led visual strategy and concept development across digital marketing campaigns</strong>, establishing a cohesive brand identity across social, web, and email touch points.</p>
+              <p>Partnered closely with marketing and sales to <strong>translate business objectives into clear, compelling visual narratives</strong> that supported growth and positioning.</p>
+              <p>Analyzed campaign performance and audience engagement, using insights to iterate on creative direction and continuously improve impact.</p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <h3 class="job-title">Product Designer</h3>
+              <div class="job-details">
+                <p>Venosa</p>
+                <p>Aug 2022 – Sep 2023</p>
+                <p>Sao Paulo, Brazil</p>
+              </div>
+            </div>
+            <div class="job-body">
+              <p>Led the creative process across projects, including the GS1 Innovation Center winning submission, aligning design direction with team objectives and client goals.</p>
+              <p><strong>Facilitated workshops to define the studio’s brand and operational processes,</strong> applying design thinking frameworks such as Double Diamond and Golden Circle to establish repeatable systems.</p>
+              <p><strong>Designed user interfaces and interactive prototypes in Figma,</strong> focusing on usability, visual consistency, and scalable design systems.</p>
+              <p>Worked cross-functionally with administration and development teams to translate concepts into execution and ensure high-quality project delivery.</p>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="job-meta">
+              <h3 class="job-title">Visual Designer</h3>
+              <div class="job-details">
+                <p>Brandworks</p>
+                <p>Jan 2021 – Jul 2022</p>
+                <p>Sao Paulo, Brazil</p>
+              </div>
+            </div>
+            <div class="job-body">
+              <p>Led the <strong>creative process across projects for major brands such as Budweiser, Stella Artois, and Gatorade</strong>, aligning design execution with campaign objectives.</p>
+              <p>Acted as a bridge between the lead designer and the agency, ensuring clear communication, alignment, and efficient project flow.</p>
+              <p>Created advertising assets for events and retail environments using Illustrator, Photoshop, After Effects, and Blender 3D, translating concepts into polished visual deliverables.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title">Skills</h2>
+        <div class="skills">
+          <div class="skill-group">
+            <h4>Product &amp; UX Design</h4>
+            <ul>
+              <li>UX/UI Design</li>
+              <li>Interaction Design</li>
+              <li>Design Systems</li>
+              <li>Prototyping</li>
+              <li>User Flows</li>
+              <li>Visual Design</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Product Management</h4>
+            <ul>
+              <li>Product Strategy</li>
+              <li>Road mapping</li>
+              <li>Sprint Planning</li>
+              <li>Backlog Management</li>
+              <li>Product Operations</li>
+              <li>Stakeholder Alignment</li>
+              <li>Agile Methodologies</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Data &amp; Performance</h4>
+            <ul>
+              <li>Product Metrics</li>
+              <li>KPI Definition</li>
+              <li>Platform Monitoring</li>
+              <li>Data-informed Decision Making</li>
+              <li>Funnel Optimization</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Business &amp; Operations</h4>
+            <ul>
+              <li>0→1 Product Development</li>
+              <li>Internal Tools &amp; Platform Design</li>
+              <li>Process Building</li>
+              <li>Sales &amp; Operations Alignment</li>
+              <li>Revenue-focused Product Development</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Technical &amp; Tools</h4>
+            <ul>
+              <li>Figma</li>
+              <li>Adobe Creative Suite (Illustrator, Photoshop, After Effects)</li>
+              <li>Basic front-end development (HTML/CSS/JS)</li>
+              <li>QA &amp; Release Processes</li>
+              <li>Documentation Systems</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <h2 class="section-title" id="education-title">Education</h2>
+        <div class="education">
+          <h3>European Institute of Design</h3>
+          <p>Bachelor of Science in Product Design</p>
+        </div>
+      </section>
+
+      <div class="contact-cta">
+        <a href="mailto:otaviomarquesdm@gmail.com">Contact Me</a>
+      </div>
+
+    </main>
+  </div>
 
 </body>
 </html>
