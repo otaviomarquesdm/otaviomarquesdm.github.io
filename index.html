@@ -8,98 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #d9d9d9;
-      --accent: #0015ff;
-      --text: #0015ff;
-      --text-secondary: #6874fe;
-      --on-accent: #ffffff;
-      --divider: #ffffff;
-      --link-hover: #ff0000;
-      --font: 'Space Grotesk', sans-serif;
-      --page-gutter: 30px;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.4; letter-spacing: -0.01em; }
-    a { color: inherit; }
-    a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; }
-
-    /* Header */
-    .site-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; min-height: 235px; padding: 30px var(--page-gutter); }
-    .site-name { font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
-    .site-role { color: var(--text-secondary); }
-    .site-nav { display: flex; gap: 20px; list-style: none; font-size: 16px; font-weight: 700; line-height: 1.3; }
-    .site-nav a { text-decoration: none; }
-    .site-nav a:hover, .site-nav a[aria-current] { text-decoration: underline; }
-
-    /* Layout */
-    .layout { display: grid; grid-template-columns: 358px minmax(0, 1fr); column-gap: 52px; padding-left: var(--page-gutter); }
-
-    /* Intro */
-    .intro { border-top: 1px solid var(--divider); padding-top: 30px; align-self: start; }
-    .intro-bio { max-width: 310px; padding-left: 6px; margin-bottom: 60px; }
-
-    /* Contact links */
-    .contact-list { list-style: none; }
-    .contact-item { background: var(--accent); color: var(--on-accent); }
-    .contact-item + .contact-item { border-top: 0.5px solid var(--divider); }
-    .contact-row { display: flex; align-items: center; gap: 1px; padding: 12px 6px; font-size: 13px; line-height: 1.3; letter-spacing: -0.005em; text-decoration: none; }
-    .contact-row.is-primary { font-weight: 700; }
-    .contact-arrow { color: var(--accent); font-size: 10px; }
-    a.contact-row:hover { background: var(--on-accent); color: var(--link-hover); }
-    a.contact-row:hover .contact-arrow { color: inherit; }
-
-    /* Sections */
-    .section { border-top: 1px solid var(--divider); display: flex; flex-direction: column; gap: 37px; padding: 30px var(--page-gutter) 80px 0; }
-    .section-title { font-size: 13px; font-weight: 700; line-height: 1.3; letter-spacing: -0.005em; }
-
-    /* Experience */
-    .jobs { display: flex; flex-direction: column; gap: 50px; }
-    .job { border-top: 0.5px solid var(--divider); display: flex; gap: 30px; padding-top: 20px; }
-    .job-meta, .job-body { flex: 1 1 0; min-width: 0; }
-    .job-title { font-size: 16px; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 16px; }
-    .job-details { color: var(--text-secondary); display: flex; flex-direction: column; gap: 2px; }
-    .job-body p + p { margin-top: 1.4em; }
-
-    /* Skills */
-    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 30px; }
-    .skill-group h4 { font-size: 16px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
-    .skill-group ul { color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; padding-left: 22px; }
-    .skill-group li { line-height: 1.2; }
-
-    /* Education */
-    .education { display: grid; grid-template-columns: 1fr 1fr; gap: 37px; }
-    .education h3, .education p { font-size: 16px; font-weight: 400; }
-
-    /* Contact */
-    .contact-cta { display: flex; align-items: flex-end; height: 300px; padding-bottom: 32px; }
-    .contact-cta a { font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; text-decoration: none; }
-    .contact-cta a:hover { text-decoration: underline; }
-
-    /* Tablet */
-    @media (max-width: 1279px) {
-      .site-header { min-height: 180px; }
-      .layout { display: block; padding: 0 var(--page-gutter); }
-      .intro-bio { max-width: 520px; }
-      .intro { margin-bottom: 30px; }
-      .section { padding-right: 0; }
-      .job { flex-direction: column; }
-    }
-
-    /* Mobile */
-    @media (max-width: 799px) {
-      :root { --page-gutter: 20px; }
-      .site-header { min-height: 140px; }
-      .job { gap: 20px; }
-    }
-    @media (max-width: 479px) {
-      .site-header { flex-direction: column; gap: 12px; }
-      .skills, .education { grid-template-columns: 1fr; }
-      .education { gap: 4px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -110,16 +19,15 @@
     </div>
     <nav aria-label="Main">
       <ul class="site-nav">
-        <li><a href="#experience" aria-current="page">Work</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="work/index.html">Work</a></li>
       </ul>
     </nav>
   </header>
 
   <div class="layout">
 
-    <aside class="intro" id="about">
-      <p class="intro-bio">A seasoned Senior Producer with 5+ years of experience, I excel in leading complex product design projects from concept to completion.</p>
+    <aside class="intro">
+      <p class="intro-bio">Product manager with a product design background and a systems-thinking approach. Experienced in early-stage startups, bringing structure to processes and operations and tying them to measurable business goals. At Sola, an insurtech startup, turned stalled projects into launched products and helped scale monthly revenue from $100K to $1M+ in 10 months.</p>
       <ul class="contact-list">
         <li class="contact-item">
           <a class="contact-row is-primary" href="mailto:otaviomarquesdm@gmail.com">otaviomarquesdm@gmail.com <span class="contact-arrow" aria-hidden="true">↗</span></a>
@@ -129,6 +37,9 @@
         </li>
         <li class="contact-item">
           <a class="contact-row" href="https://www.linkedin.com/in/otaviodemendonca/" target="_blank" rel="noopener">Linkedin <span class="contact-arrow" aria-hidden="true">↗</span></a>
+        </li>
+        <li class="contact-item">
+          <span class="contact-row">Based in Atlanta, GA</span>
         </li>
       </ul>
     </aside>
@@ -141,7 +52,7 @@
 
           <article class="job">
             <div class="job-meta">
-              <h3 class="job-title">Product Manager (Digital Platform)</h3>
+              <h3 class="job-title">Product Manager – Digital Platform</h3>
               <div class="job-details">
                 <p>Sola Insurance</p>
                 <p>Jul 2025 – Present</p>
@@ -149,9 +60,12 @@
               </div>
             </div>
             <div class="job-body">
-              <p><strong>Manage the product development and platform strategy</strong> for Sola’s internal and customer-facing insurance systems. Coordinating priorities while supporting the platform infrastructure and operational maturity <strong>leading up to Sola’s $8M Series A.</strong></p>
-              <p>Implemented the product roadmap, sprint planning, and delivery timelines while introducing product operations practices, including structured briefings, cross-team syncs, retrospectives, and centralized documentation. Resulting in a <strong>clear scope definition and end-to-end ownership initiatives that helped scale revenue from $30K to $500K+ per month.</strong></p>
-              <p><strong>Implemented product metrics and platform monitoring to track system health, user activity, and operational performance</strong>, guiding data-informed improvements to core flows including quote generation, checkout, and payment processing. <strong>Established QA and release processes to improve deployment reliability and significantly reduce production bugs.</strong></p>
+              <p><strong>Helped scale monthly revenue from $100K to $1M+ in 10 months</strong> by defining direction, scope, ownership, and delivery timelines.</p>
+              <p>Owned the product roadmap and platform strategy for all internal and customer-facing insurance products, <strong>leading a cross-functional team of 5 members.</strong></p>
+              <p><strong>Increased quote-to-purchase conversion by 20%</strong> by leading improvements to quote generation, checkout, and payments.</p>
+              <p><strong>Increased policy renewal rate by 49%</strong> by launching a renewal system for agents.</p>
+              <p>Established QA and release processes, <strong>reducing production bugs by over 90% and increasing commits by 43%.</strong></p>
+              <p>Introduced product operations practices, including briefings, cross-team syncs, retrospectives, and documentation.</p>
             </div>
           </article>
 
@@ -165,12 +79,11 @@
               </div>
             </div>
             <div class="job-body">
-              <p>Joined as the 4th employee at a seed-stage startup, helping define the foundation of the company’s digital product and design language.</p>
-              <p><strong>Designed and helped shape the UX and UI architecture for the company’s internal and customer platforms.</strong></p>
-              <p>Led design of the internal sales platform, enabling centralized visibility into sales activity, policy management, agent rewards, and customer support workflows.</p>
-              <p><strong>Designed the policyholder portal from scratch, allowing customers to manage payments, access policy documentation, update information, and file claims.</strong></p>
-              <p>Worked closely with engineering to translate product concepts into functional features and scalable interfaces.</p>
-              <p>Contributed to establishing early product communication and documentation practices across the team.</p>
+              <p>Helped define the foundation of Sola’s digital product and design language <strong>as the 4th employee.</strong></p>
+              <p><strong>Designed the UX and UI architecture</strong> for internal and customer-facing platforms.</p>
+              <p><strong>Led design for the internal sales platform and the policyholder portal from scratch.</strong></p>
+              <p>Worked closely with engineering to translate concepts into functional features and scalable interfaces.</p>
+              <p>Contributed to early product communication and documentation practices across the team.</p>
             </div>
           </article>
 
@@ -184,9 +97,10 @@
               </div>
             </div>
             <div class="job-body">
-              <p><strong>Led visual strategy and concept development across digital marketing campaigns</strong>, establishing a cohesive brand identity across social, web, and email touch points.</p>
-              <p>Partnered closely with marketing and sales to <strong>translate business objectives into clear, compelling visual narratives</strong> that supported growth and positioning.</p>
-              <p>Analyzed campaign performance and audience engagement, using insights to iterate on creative direction and continuously improve impact.</p>
+              <p><strong>Led visual strategy and concept development</strong> across digital marketing campaigns.</p>
+              <p>Established a cohesive brand identity across social, web, and email touchpoints.</p>
+              <p>Partnered with marketing and sales to <strong>translate business objectives into clear visual narratives.</strong></p>
+              <p>Analyzed campaign performance and used insights to iterate on creative direction.</p>
             </div>
           </article>
 
@@ -200,10 +114,10 @@
               </div>
             </div>
             <div class="job-body">
-              <p>Led the creative process across projects, including the GS1 Innovation Center winning submission, aligning design direction with team objectives and client goals.</p>
-              <p><strong>Facilitated workshops to define the studio’s brand and operational processes,</strong> applying design thinking frameworks such as Double Diamond and Golden Circle to establish repeatable systems.</p>
-              <p><strong>Designed user interfaces and interactive prototypes in Figma,</strong> focusing on usability, visual consistency, and scalable design systems.</p>
-              <p>Worked cross-functionally with administration and development teams to translate concepts into execution and ensure high-quality project delivery.</p>
+              <p>Led the creative process across projects, <strong>including the winning submission for the GS1 Innovation Center.</strong></p>
+              <p><strong>Facilitated workshops</strong> to define the studio’s brand and operational processes.</p>
+              <p><strong>Designed user interfaces and interactive prototypes in Figma,</strong> focusing on usability and consistency.</p>
+              <p>Worked cross-functionally with administration and development teams to translate concepts into execution.</p>
             </div>
           </article>
 
@@ -217,9 +131,9 @@
               </div>
             </div>
             <div class="job-body">
-              <p>Led the <strong>creative process across projects for major brands such as Budweiser, Stella Artois, and Gatorade</strong>, aligning design execution with campaign objectives.</p>
-              <p>Acted as a bridge between the lead designer and the agency, ensuring clear communication, alignment, and efficient project flow.</p>
-              <p>Created advertising assets for events and retail environments using Illustrator, Photoshop, After Effects, and Blender 3D, translating concepts into polished visual deliverables.</p>
+              <p>Led the <strong>creative process across projects for major brands such as Budweiser, Stella Artois, and Gatorade.</strong></p>
+              <p>Acted as a bridge between the lead designer and the agency, ensuring clear communication and efficient project flow.</p>
+              <p>Created advertising assets for events and retail environments using Illustrator, Photoshop, After Effects, and Blender 3D.</p>
             </div>
           </article>
 
@@ -230,21 +144,10 @@
         <h2 class="section-title" id="skills-title">Skills</h2>
         <div class="skills">
           <div class="skill-group">
-            <h4>Product &amp; UX Design</h4>
-            <ul>
-              <li>UX/UI Design</li>
-              <li>Interaction Design</li>
-              <li>Design Systems</li>
-              <li>Prototyping</li>
-              <li>User Flows</li>
-              <li>Visual Design</li>
-            </ul>
-          </div>
-          <div class="skill-group">
             <h4>Product Management</h4>
             <ul>
               <li>Product Strategy</li>
-              <li>Road mapping</li>
+              <li>Roadmap</li>
               <li>Sprint Planning</li>
               <li>Backlog Management</li>
               <li>Product Operations</li>
@@ -257,29 +160,25 @@
             <ul>
               <li>Product Metrics</li>
               <li>KPI Definition</li>
-              <li>Platform Monitoring</li>
-              <li>Data-informed Decision Making</li>
-              <li>Funnel Optimization</li>
+              <li>Data-informed Decision-making</li>
             </ul>
           </div>
           <div class="skill-group">
             <h4>Business &amp; Operations</h4>
             <ul>
-              <li>0→1 Product Development</li>
-              <li>Internal Tools &amp; Platform Design</li>
-              <li>Process Building</li>
-              <li>Sales &amp; Operations Alignment</li>
-              <li>Revenue-focused Product Development</li>
+              <li>0-to-1 Product Development</li>
+              <li>Internal Tools</li>
+              <li>Platform Design</li>
             </ul>
           </div>
           <div class="skill-group">
             <h4>Technical &amp; Tools</h4>
             <ul>
               <li>Figma</li>
-              <li>Adobe Creative Suite (Illustrator, Photoshop, After Effects)</li>
-              <li>Basic front-end development (HTML/CSS/JS)</li>
-              <li>QA &amp; Release Processes</li>
-              <li>Documentation Systems</li>
+              <li>Cursor</li>
+              <li>AI-assisted Design and Development</li>
+              <li>ClickUp</li>
+              <li>Notion</li>
             </ul>
           </div>
         </div>
