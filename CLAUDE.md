@@ -16,6 +16,8 @@ Portfolio published with GitHub Pages at https://otaviomarquesdm.github.io/.
 2. In the copy, set `data-project` on `<body>` to the slug, then fill in the title, text, images and videos. Keep media files in the project folder.
 3. Add an entry to `work/projects.js`.
 
+The Work page is on hold and shows "Projects coming soon." while `work/projects.js` is empty. The four sample projects and their placeholder images are parked in `work/_placeholders/`, which isn't published. To bring them back, move the contents up into `work/` and re-add their entries.
+
 ## Design source
 
 - Design file (styles, resume content): https://www.figma.com/design/DyxgfDdAGsKO42eaKjwlL0/Untitled?node-id=27-8
